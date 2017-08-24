@@ -1,0 +1,2 @@
+class Segmentation < ApplicationRecord
+end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  segmentation: one
+  group: 1
+  field: MyString
+  operation: MyString
+  value: MyString
+
+two:
+  segmentation: two
+  group: 1
+  field: MyString
+  operation: MyString
+  value: MyString

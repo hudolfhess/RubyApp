@@ -1,0 +1,49 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "contacts"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (185.0ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "age" integer, "state" varchar, "occupation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "segmentation_filters"[0m
+  [1m[35m (133.7ms)[0m  [1m[35mCREATE TABLE "segmentation_filters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "segmentation_id" integer, "group" integer, "field" varchar, "operation" varchar, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (155.1ms)[0m  [1m[35mCREATE  INDEX "index_segmentation_filters_on_segmentation_id" ON "segmentation_filters" ("segmentation_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "segmentations"[0m
+  [1m[35m (132.4ms)[0m  [1m[35mCREATE TABLE "segmentations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (144.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (180.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170824042436)[0m
+  [1m[35m (178.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170823233055),
+(20170824042044);
+
+[0m
+  [1m[35m (141.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-08-24 05:31:34.696548"], ["updated_at", "2017-08-24 05:31:34.696548"]]
+  [1m[35m (159.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "contacts"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "age", "state", "occupation", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', 'MyString', '2017-08-24 05:31:34.975487', '2017-08-24 05:31:34.975487', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "age", "state", "occupation", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', 'MyString', '2017-08-24 05:31:34.975487', '2017-08-24 05:31:34.975487', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "segmentations"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2017-08-24 05:31:34.982282', '2017-08-24 05:31:34.982282', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2017-08-24 05:31:34.982282', '2017-08-24 05:31:34.982282', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "segmentation_filters"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("group", "field", "operation", "value", "created_at", "updated_at", "id", "segmentation_id") VALUES (1, 'MyString', 'MyString', 'MyString', '2017-08-24 05:31:34.988165', '2017-08-24 05:31:34.988165', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("group", "field", "operation", "value", "created_at", "updated_at", "id", "segmentation_id") VALUES (1, 'MyString', 'MyString', 'MyString', '2017-08-24 05:31:34.988165', '2017-08-24 05:31:34.988165', 298486374, 298486374)[0m
+  [1m[35m (132.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+IndexControllerTest: test_should_get_index
+------------------------------------------
+Started GET "/index/index" for 127.0.0.1 at 2017-08-24 02:31:35 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 222ms (Views: 215.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
