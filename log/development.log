@@ -1,0 +1,14 @@
+Started GET "/" for 127.0.0.1 at 2017-08-23 20:14:01 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/hudolf/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/hudolf/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 104ms (Views: 4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-23 20:15:06 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/hudolf/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/hudolf/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 154ms (Views: 7.0ms)
+
+
