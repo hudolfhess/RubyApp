@@ -1,0 +1,14 @@
+<h1>Listing segments</h1>
+ <%= link_to 'New segment', new_segment_path %>
+<table>
+    <thead>
+        <th>Name</th>
+        <th colspan="2"></th>
+    </thead>
+    <% @segments.each do |segment| %>
+    <tr>
+      <td><%= segment.name %></td>
+      <td><%= link_to 'Filter contacts', contacts_path %></td>
+    </tr>
+  <% end %>
+</table>
