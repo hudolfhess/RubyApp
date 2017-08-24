@@ -11,13 +11,13 @@ class ContactsController < ApplicationController
         # make groups
         # filter by groups
         ### select * from contacts where (group 0) or (group 1) or (group 2)
-        @contacts = Contact.where('(name like ? and age >= ? and state = ?) or (name like ? and age >= ? and state = ?)', '%h%', 15, 'SC', '%h%', 10, 'SP')
+        # @contacts = Contact.where('(name like ? and age >= ? and state = ?) or (name like ? and age >= ? and state = ?)', '%h%', 15, 'SC', '%h%', 10, 'SP')
 
-        # if @segmentation_id
-        #     @contacts = []
-        # else
-        #     @contacts = @contact_gateway.get_all_contacts
-        # end
+        if @segmentation_id
+            @contacts = []
+        else
+            @contacts = @contact_gateway.get_all_contacts
+        end
     end
 
     def new
