@@ -6,7 +6,7 @@
 - [ ] List segments
 - [ ] Add segment
 - [ ] Filter contacts by segmentses
-- [ ] Testes
+- [ ] Final tests
 
 # Modeling
 
@@ -14,6 +14,7 @@
 - Segmentation
     name
 - SegmentationFilter
+
     group
     field
     operation
