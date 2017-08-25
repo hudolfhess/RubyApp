@@ -1,4 +1,57 @@
 <h1>New segment</h1>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+  var fields = <%= @fields.to_json.html_safe %>
+  var lastGroup = 0
+  var lastField = 0
+  function getSelectFields(numberGroup, numberField) {
+    var select = '<select class="js-select-fields" name="filter-field[' + numberGroup + '][' + numberField + ']">'
+
+    fields.forEach(function(field) {
+      select += '<option value="' + field.name + '">' + field.name + '</option>'
+    })
+
+    return select + '</select>'
+  }
+
+  function getSelectFilters(numberGroup, numberField) {
+    return '<select class="js-select-filters" name="filter-filter[' + numberGroup + '][' + numberField + ']"></select>'
+  }
+
+  function addField(numberGroup) {
+    lastField += 1
+    var group = $('.js-filter-group-' + numberGroup).find('.js-fields')
+    var fieldHtml = '<div class="js-field">' + 
+                      '<label>Field: ' + getSelectFields(numberGroup, lastField) + '</label>' +
+                      '<label>Filter: ' + getSelectFilters(numberGroup, lastField) + '</label>' +
+                      '<label>Value: <input type="text" name="filter-value[' + numberGroup + '][' + lastField + ']"</label>' +
+                    '</div>'
+    group.append(fieldHtml)
+    $('.js-select-fields').on('change', function() {
+      var value = $(this).val()
+      var field = fields.filter(function(f) {
+        return f.name == value
+      })[0]
+      var optionHtml = ''
+      field.filters.forEach(function(filter) {
+        optionHtml += '<option value="' + filter + '">' + filter + '</option>'
+      })
+      $(this).parents('.js-field').find('.js-select-filters').html(optionHtml)
+    })
+    group.find('.js-select-fields:last').change()
+  }
+
+  $(document).ready(function() {
+    $('#addFilterGroup').on('click', function() {
+      lastGroup += 1
+      var newGroup = '<div style="margin: 20px 0px; padding: 10px; border: 1px solid #ccc;" class="js-filter-group-' + lastGroup + '">' +
+                        '<div class="js-fields"></div>' +
+                        '<input type="button" value="Add field" onClick="addField(' + lastGroup + ')" />' +
+                     '</div>'
+      $('#filters').append(newGroup)
+    })
+  })
+</script>
 <%= form_for :segment, url: segments_path do |f| %>
 
   <% if @segment.errors.any? %>
@@ -19,6 +72,11 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
+
+  <h2>Filters</h2>
+  <div id="filters">
+  </div>
+  <input type="button" value="Add group" id="addFilterGroup" />
  
   <p>
     <%= f.submit %>
