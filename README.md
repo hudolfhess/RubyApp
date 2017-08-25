@@ -21,5 +21,6 @@
 git clone https://github.com/hudolfhess/RubyApp
 cd RubyApp
 bundle install # fist time only
+rails db:migrate # first time only or when schema is changed
 rails server
 ```
