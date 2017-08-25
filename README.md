@@ -3,9 +3,9 @@
 - [x] List contacts
 - [x] Add contact
 - [x] Edit contact
-- [ ] List segments
-- [ ] Add segment
-- [ ] Filter contacts by segmentses
+- [X] List segments
+- [X] Add segment
+- [X] Filter contacts by segmentses
 - [ ] Final tests
 
 # Modeling

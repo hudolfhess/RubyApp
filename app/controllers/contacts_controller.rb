@@ -1,4 +1,5 @@
 require_relative '../gateways/contact_gateway'
+require_relative '../entities/segmentation_filters_entity'
 
 class ContactsController < ApplicationController
     def initialize
@@ -7,14 +8,13 @@ class ContactsController < ApplicationController
 
     def index
         @segmentation_id = params[:segmentation_id]
-        # get segmentation filters
-        # make groups
-        # filter by groups
-        ### select * from contacts where (group 0) or (group 1) or (group 2)
-        # @contacts = Contact.where('(name like ? and age >= ? and state = ?) or (name like ? and age >= ? and state = ?)', '%h%', 15, 'SC', '%h%', 10, 'SP')
 
         if @segmentation_id
-            @contacts = []
+            @segmentation_filters = SegmentationFilter.where('segmentation_id = ?', @segmentation_id)
+            @segmentation_query_builder = SegmentationFilterQueryBuilder.new(@segmentation_filters)
+            @queryWhere = @segmentation_query_builder.get_query
+
+            @contacts = Contact.where(@queryWhere)
         else
             @contacts = @contact_gateway.get_all_contacts
         end

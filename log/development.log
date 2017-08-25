@@ -1,296 +1,478 @@
-Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:02:01 -0300
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 19:03:33 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   
-SyntaxError (/home/hudolf/Projetos/RubyProject/RubyApp/app/controllers/segments_controller.rb:125: syntax error, unexpected ':', expecting ')'
-                :segmentation: @segmentation, :field: filter
-                              ^
-/home/hudolf/Projetos/RubyProject/RubyApp/app/controllers/segments_controller.rb:125: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
-tation: @segmentation, :field: filter['field'],
-                              ^
-/home/hudolf/Projetos/RubyProject/RubyApp/app/controllers/segments_controller.rb:126: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
-                :filter: filter['filter'], :value: fil
-                        ^
-/home/hudolf/Projetos/RubyProject/RubyApp/app/controllers/segments_controller.rb:126: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
-ter: filter['filter'], :value: filter['value'])
-                              ^
-/home/hudolf/Projetos/RubyProject/RubyApp/app/controllers/segments_controller.rb:126: syntax error, unexpected ')', expecting keyword_end
-er'], :value: filter['value'])
-                              ^
-/home/hudolf/Projetos/RubyProject/RubyApp/app/controllers/segments_controller.rb:157: syntax error, unexpected keyword_end, expecting end-of-input):
+SyntaxError (/home/hudolf/Projetos/RubyProject/RubyApp/app/entities/segmentation_filters_entity.rb:128: syntax error, unexpected end-of-input, expecting keyword_end):
   
-app/controllers/segments_controller.rb:125: syntax error, unexpected ':', expecting ')'
-app/controllers/segments_controller.rb:125: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
-app/controllers/segments_controller.rb:126: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
-app/controllers/segments_controller.rb:126: syntax error, unexpected ':', expecting &. or :: or '[' or '.'
-app/controllers/segments_controller.rb:126: syntax error, unexpected ')', expecting keyword_end
-app/controllers/segments_controller.rb:157: syntax error, unexpected keyword_end, expecting end-of-input
-Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:02:44 -0300
-Processing by SegmentsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D9JA08ZTSflkBI50QtHnSZFtMe0TCzgfMoQGRfiboDsG3OZFfJ1EIEnpNfj80E8I+aOGirrHSemr4yGtFUzCvQ==", "segment"=>{"name"=>"Software SC"}, "filter-field"=>{"1"=>{"1"=>"name"}}, "filter-filter"=>{"1"=>{"1"=>"Contains"}}, "filter-value"=>{"1"=>{"1"=>"SC"}}, "commit"=>"Save Segment"}
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Software SC"], ["created_at", "2017-08-25 21:02:44.206326"], ["updated_at", "2017-08-25 21:02:44.206326"]]
-  [1m[35m (127.4ms)[0m  [1m[36mcommit transaction[0m
-Completed 500 Internal Server Error in 158ms (ActiveRecord: 129.6ms)
+app/entities/segmentation_filters_entity.rb:128: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/segments_controller.rb:1:in `require_relative'
+app/controllers/segments_controller.rb:1:in `<top (required)>'
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 19:03:56 -0300
+Processing by SegmentsController#new as HTML
+  Rendering segments/new.html.erb within layouts/application
+  Rendered segments/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 213ms (Views: 196.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 19:04:15 -0300
+Processing by SegmentsController#new as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.2ms)
 
 
   
-ActiveModel::UnknownAttributeError (unknown attribute 'filter' for SegmentationFilter.):
+NameError (uninitialized constant SegmentsController::SegmentationFilterEntity):
   
-app/controllers/segments_controller.rb:124:in `block in create'
-app/controllers/segments_controller.rb:122:in `each'
-app/controllers/segments_controller.rb:122:in `create'
-Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:04:07 -0300
-Processing by SegmentsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D9JA08ZTSflkBI50QtHnSZFtMe0TCzgfMoQGRfiboDsG3OZFfJ1EIEnpNfj80E8I+aOGirrHSemr4yGtFUzCvQ==", "segment"=>{"name"=>"Software SC"}, "filter-field"=>{"1"=>{"1"=>"name"}}, "filter-filter"=>{"1"=>{"1"=>"Contains"}}, "filter-value"=>{"1"=>{"1"=>"SC"}}, "commit"=>"Save Segment"}
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Software SC"], ["created_at", "2017-08-25 21:04:07.755722"], ["updated_at", "2017-08-25 21:04:07.755722"]]
-  [1m[35m (171.1ms)[0m  [1m[36mcommit transaction[0m
-Completed 500 Internal Server Error in 293ms (ActiveRecord: 172.8ms)
+app/controllers/segments_controller.rb:11:in `new'
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 19:04:33 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SegmentsController#new as HTML
+  Rendering segments/new.html.erb within layouts/application
+  Rendered segments/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 207ms (Views: 191.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 19:04:54 -0300
+Processing by SegmentsController#new as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.9ms)
 
 
   
-NameError (undefined local variable or method `segmentation' for #<SegmentsController:0x007ff3a9d773d8>
-Did you mean?  @segmentation):
+NameError (uninitialized constant SegmentsController::EqualFilterEntity):
   
-app/controllers/segments_controller.rb:123:in `block in create'
-app/controllers/segments_controller.rb:122:in `each'
-app/controllers/segments_controller.rb:122:in `create'
-Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:04:14 -0300
-Processing by SegmentsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D9JA08ZTSflkBI50QtHnSZFtMe0TCzgfMoQGRfiboDsG3OZFfJ1EIEnpNfj80E8I+aOGirrHSemr4yGtFUzCvQ==", "segment"=>{"name"=>"Software SC"}, "filter-field"=>{"1"=>{"1"=>"name"}}, "filter-filter"=>{"1"=>{"1"=>"Contains"}}, "filter-value"=>{"1"=>{"1"=>"SC"}}, "commit"=>"Save Segment"}
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Software SC"], ["created_at", "2017-08-25 21:04:14.486196"], ["updated_at", "2017-08-25 21:04:14.486196"]]
-  [1m[35m (118.0ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("segmentation_id", "group", "field", "operation", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["segmentation_id", 13], ["group", 1], ["field", "name"], ["operation", "Contains"], ["value", "SC"], ["created_at", "2017-08-25 21:04:14.620046"], ["updated_at", "2017-08-25 21:04:14.620046"]]
-  [1m[35m (138.2ms)[0m  [1m[36mcommit transaction[0m
-No template found for SegmentsController#create, rendering head :no_content
-Completed 204 No Content in 304ms (ActiveRecord: 259.8ms)
-
-
-Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:04:16 -0300
-Processing by SegmentsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D9JA08ZTSflkBI50QtHnSZFtMe0TCzgfMoQGRfiboDsG3OZFfJ1EIEnpNfj80E8I+aOGirrHSemr4yGtFUzCvQ==", "segment"=>{"name"=>"Software SC"}, "filter-field"=>{"1"=>{"1"=>"name"}}, "filter-filter"=>{"1"=>{"1"=>"Contains"}}, "filter-value"=>{"1"=>{"1"=>"SC"}}, "commit"=>"Save Segment"}
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Software SC"], ["created_at", "2017-08-25 21:04:16.684731"], ["updated_at", "2017-08-25 21:04:16.684731"]]
-  [1m[35m (123.9ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("segmentation_id", "group", "field", "operation", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["segmentation_id", 14], ["group", 1], ["field", "name"], ["operation", "Contains"], ["value", "SC"], ["created_at", "2017-08-25 21:04:16.813346"], ["updated_at", "2017-08-25 21:04:16.813346"]]
-  [1m[35m (163.2ms)[0m  [1m[36mcommit transaction[0m
-No template found for SegmentsController#create, rendering head :no_content
-Completed 204 No Content in 307ms (ActiveRecord: 288.1ms)
-
-
-Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:04:35 -0300
-Processing by SegmentsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D9JA08ZTSflkBI50QtHnSZFtMe0TCzgfMoQGRfiboDsG3OZFfJ1EIEnpNfj80E8I+aOGirrHSemr4yGtFUzCvQ==", "segment"=>{"name"=>"Software SC"}, "filter-field"=>{"1"=>{"1"=>"name"}}, "filter-filter"=>{"1"=>{"1"=>"Contains"}}, "filter-value"=>{"1"=>{"1"=>"SC"}}, "commit"=>"Save Segment"}
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Software SC"], ["created_at", "2017-08-25 21:04:35.199627"], ["updated_at", "2017-08-25 21:04:35.199627"]]
-  [1m[35m (148.8ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("segmentation_id", "group", "field", "operation", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["segmentation_id", 15], ["group", 1], ["field", "name"], ["operation", "Contains"], ["value", "SC"], ["created_at", "2017-08-25 21:04:35.368306"], ["updated_at", "2017-08-25 21:04:35.368306"]]
-  [1m[35m (146.3ms)[0m  [1m[36mcommit transaction[0m
-  Rendering text template
-  Rendered text template (0.0ms)
-Completed 200 OK in 331ms (Views: 1.7ms | ActiveRecord: 298.7ms)
-
-
-Started GET "/segments" for 127.0.0.1 at 2017-08-25 18:04:39 -0300
-Processing by SegmentsController#index as HTML
-  Rendering segments/index.html.erb within layouts/application
-  [1m[36mSegmentation Load (0.2ms)[0m  [1m[34mSELECT "segmentations".* FROM "segmentations"[0m
-  Rendered segments/index.html.erb within layouts/application (4.1ms)
-Completed 200 OK in 47ms (Views: 44.7ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/segments" for 127.0.0.1 at 2017-08-25 18:04:58 -0300
-Processing by SegmentsController#index as HTML
-  Rendering segments/index.html.erb within layouts/application
-  [1m[36mSegmentation Load (0.6ms)[0m  [1m[34mSELECT "segmentations".* FROM "segmentations"[0m
-  Rendered segments/index.html.erb within layouts/application (16.9ms)
-Completed 200 OK in 59ms (Views: 55.4ms | ActiveRecord: 1.8ms)
-
-
-Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:05:00 -0300
-Processing by SegmentsController#new as HTML
-  Rendering segments/new.html.erb within layouts/application
-  Rendered segments/new.html.erb within layouts/application (11.0ms)
-Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:05:02 -0300
-Processing by SegmentsController#new as HTML
-  Rendering segments/new.html.erb within layouts/application
-  Rendered segments/new.html.erb within layouts/application (4.1ms)
-Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:05:03 -0300
-Processing by SegmentsController#new as HTML
-  Rendering segments/new.html.erb within layouts/application
-  Rendered segments/new.html.erb within layouts/application (2.7ms)
-Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:05:04 -0300
-Processing by SegmentsController#new as HTML
-  Rendering segments/new.html.erb within layouts/application
-  Rendered segments/new.html.erb within layouts/application (2.5ms)
-Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/segments" for 127.0.0.1 at 2017-08-25 18:05:06 -0300
-Processing by SegmentsController#index as HTML
-  Rendering segments/index.html.erb within layouts/application
-  [1m[36mSegmentation Load (0.3ms)[0m  [1m[34mSELECT "segmentations".* FROM "segmentations"[0m
-  Rendered segments/index.html.erb within layouts/application (4.0ms)
-Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.3ms)
-
-
-Started GET "/segments" for 127.0.0.1 at 2017-08-25 18:05:07 -0300
-Processing by SegmentsController#index as HTML
-  Rendering segments/index.html.erb within layouts/application
-  [1m[36mSegmentation Load (0.2ms)[0m  [1m[34mSELECT "segmentations".* FROM "segmentations"[0m
-  Rendered segments/index.html.erb within layouts/application (2.2ms)
-Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:05:08 -0300
-Processing by SegmentsController#new as HTML
-  Rendering segments/new.html.erb within layouts/application
-  Rendered segments/new.html.erb within layouts/application (2.9ms)
-Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:05:12 -0300
-Processing by SegmentsController#new as HTML
-  Rendering segments/new.html.erb within layouts/application
-  Rendered segments/new.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:05:23 -0300
-Processing by SegmentsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kdlszyhCrJM2fcRaoLwk3/TevUtx6M01wHODU1bXu2+Y18pZkoyhShuQf9YevYyenBAKLNgkvMNZFKS7uwDZ6Q==", "segment"=>{"name"=>"Teste"}, "filter-field"=>{"1"=>{"1"=>"state"}}, "filter-filter"=>{"1"=>{"1"=>"Equal"}}, "filter-value"=>{"1"=>{"1"=>"SC"}}, "commit"=>"Save Segment"}
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Teste"], ["created_at", "2017-08-25 21:05:23.694180"], ["updated_at", "2017-08-25 21:05:23.694180"]]
-  [1m[35m (548.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("segmentation_id", "group", "field", "operation", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["segmentation_id", 16], ["group", 1], ["field", "state"], ["operation", "Equal"], ["value", "SC"], ["created_at", "2017-08-25 21:05:24.257142"], ["updated_at", "2017-08-25 21:05:24.257142"]]
-  [1m[35m (164.0ms)[0m  [1m[36mcommit transaction[0m
-  Rendering text template
-  Rendered text template (0.0ms)
-Completed 200 OK in 732ms (Views: 0.6ms | ActiveRecord: 714.3ms)
-
-
-Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:05:57 -0300
-Processing by SegmentsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kdlszyhCrJM2fcRaoLwk3/TevUtx6M01wHODU1bXu2+Y18pZkoyhShuQf9YevYyenBAKLNgkvMNZFKS7uwDZ6Q==", "segment"=>{"name"=>"Teste"}, "filter-field"=>{"1"=>{"1"=>"state"}}, "filter-filter"=>{"1"=>{"1"=>"Equal"}}, "filter-value"=>{"1"=>{"1"=>"SP"}}, "commit"=>"Save Segment"}
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Teste"], ["created_at", "2017-08-25 21:05:57.871654"], ["updated_at", "2017-08-25 21:05:57.871654"]]
-  [1m[35m (188.4ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("segmentation_id", "group", "field", "operation", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["segmentation_id", 17], ["group", 1], ["field", "state"], ["operation", "Equal"], ["value", "SP"], ["created_at", "2017-08-25 21:05:58.075492"], ["updated_at", "2017-08-25 21:05:58.075492"]]
-  [1m[35m (140.3ms)[0m  [1m[36mcommit transaction[0m
-  Rendering text template
-  Rendered text template (0.0ms)
-Completed 200 OK in 358ms (Views: 0.7ms | ActiveRecord: 331.4ms)
-
-
-Started GET "/" for 127.0.0.1 at 2017-08-25 18:06:02 -0300
-Processing by IndexController#index as HTML
-  Rendering index/index.html.erb within layouts/application
-  Rendered index/index.html.erb within layouts/application (0.8ms)
-Completed 200 OK in 53ms (Views: 19.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/contacts" for 127.0.0.1 at 2017-08-25 18:06:05 -0300
+app/controllers/segments_controller.rb:11:in `new'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:05:16 -0300
 Processing by ContactsController#index as HTML
-  Rendering contacts/index.html.erb
-  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
-  Rendered contacts/index.html.erb (11.8ms)
-Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 1.5ms)
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
 
 
-Started GET "/contacts?segmentation_id=17" for 127.0.0.1 at 2017-08-25 18:06:14 -0300
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:05:17 -0300
 Processing by ContactsController#index as HTML
-  Parameters: {"segmentation_id"=>"17"}
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 19:05:26 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SegmentsController#new as HTML
+  Rendering segments/new.html.erb within layouts/application
+  Rendered segments/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 150ms (Views: 135.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:05:30 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.3ms)[0m  [1m[34mSELECT  "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE SegmentationFilter Load (0.0ms)[0m  [1m[34mSELECT  "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19') LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 0.4ms)
+
+
+  
+  [1m[36mCACHE SegmentationFilter Load (0.0ms)[0m  [1m[34mSELECT  "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19') LIMIT ?[0m  [["LIMIT", 11]]
+NameError (undefined local variable or method `segmentation_filters' for #<ContactsController:0x007f762c02b148>
+Did you mean?  @segmentation_filters):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:05:48 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:06:10 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `get_operator_name' for "Equal":String):
+  
+app/entities/segmentation_filters_entity.rb:87:in `block in make'
+app/entities/segmentation_filters_entity.rb:86:in `each'
+app/entities/segmentation_filters_entity.rb:86:in `make'
+app/entities/segmentation_filters_entity.rb:107:in `block (2 levels) in get_query'
+app/entities/segmentation_filters_entity.rb:106:in `each'
+app/entities/segmentation_filters_entity.rb:106:in `block in get_query'
+app/entities/segmentation_filters_entity.rb:104:in `each'
+app/entities/segmentation_filters_entity.rb:104:in `get_query'
+app/controllers/contacts_controller.rb:20:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:07:49 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:08:11 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `operation' for 1:Integer):
+  
+app/entities/segmentation_filters_entity.rb:87:in `block in make'
+app/entities/segmentation_filters_entity.rb:86:in `each'
+app/entities/segmentation_filters_entity.rb:86:in `make'
+app/entities/segmentation_filters_entity.rb:107:in `block (2 levels) in get_query'
+app/entities/segmentation_filters_entity.rb:106:in `each'
+app/entities/segmentation_filters_entity.rb:106:in `block in get_query'
+app/entities/segmentation_filters_entity.rb:104:in `each'
+app/entities/segmentation_filters_entity.rb:104:in `get_query'
+app/controllers/contacts_controller.rb:20:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:08:58 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:09:21 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:09:34 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 27ms (Views: 4.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:10:13 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `gsub!' for nil:NilClass):
+  
+app/entities/segmentation_filters_entity.rb:7:in `get_query'
+app/entities/segmentation_filters_entity.rb:109:in `block (2 levels) in get_query'
+app/entities/segmentation_filters_entity.rb:106:in `each'
+app/entities/segmentation_filters_entity.rb:106:in `block in get_query'
+app/entities/segmentation_filters_entity.rb:104:in `each'
+app/entities/segmentation_filters_entity.rb:104:in `get_query'
+app/controllers/contacts_controller.rb:20:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:10:55 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:11:15 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `gsub!' for nil:NilClass):
+  
+app/entities/segmentation_filters_entity.rb:12:in `get_query'
+app/entities/segmentation_filters_entity.rb:114:in `block (2 levels) in get_query'
+app/entities/segmentation_filters_entity.rb:111:in `each'
+app/entities/segmentation_filters_entity.rb:111:in `block in get_query'
+app/entities/segmentation_filters_entity.rb:109:in `each'
+app/entities/segmentation_filters_entity.rb:109:in `get_query'
+app/controllers/contacts_controller.rb:20:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:12:13 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:12:57 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `gsub!' for nil:NilClass):
+  
+app/entities/segmentation_filters_entity.rb:14:in `get_query'
+app/entities/segmentation_filters_entity.rb:115:in `block (2 levels) in get_query'
+app/entities/segmentation_filters_entity.rb:113:in `each'
+app/entities/segmentation_filters_entity.rb:113:in `block in get_query'
+app/entities/segmentation_filters_entity.rb:111:in `each'
+app/entities/segmentation_filters_entity.rb:111:in `get_query'
+app/controllers/contacts_controller.rb:20:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:14:08 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:14:35 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 25ms (Views: 2.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:15:27 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 23ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:18:03 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:18:22 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 24ms (Views: 2.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:18:44 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (uninitialized constant ContactsController::SegmentationFilterQueryBuilder):
+  
+app/controllers/contacts_controller.rb:19:in `index'
+Started GET "/contacts?segmentation_id=19" for 127.0.0.1 at 2017-08-25 19:19:06 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"19"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '19')[0m
   Rendering contacts/index.html.erb
-  Rendered contacts/index.html.erb (1.2ms)
-Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE ((state = "SC") OR (state = "SP"))[0m
+  Rendered contacts/index.html.erb (9.5ms)
+Completed 200 OK in 43ms (Views: 11.8ms | ActiveRecord: 2.0ms)
 
 
-Started GET "/segments" for 127.0.0.1 at 2017-08-25 18:08:00 -0300
-Processing by SegmentsController#index as HTML
-  Rendering segments/index.html.erb within layouts/application
-  [1m[36mSegmentation Load (0.2ms)[0m  [1m[34mSELECT "segmentations".* FROM "segmentations"[0m
-  Rendered segments/index.html.erb within layouts/application (8.9ms)
-Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 1.2ms)
-
-
-Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:08:04 -0300
-Processing by SegmentsController#new as HTML
-  Rendering segments/new.html.erb within layouts/application
-  Rendered segments/new.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 36ms (Views: 23.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:08:11 -0300
-Processing by SegmentsController#new as HTML
-  Rendering segments/new.html.erb within layouts/application
-  Rendered segments/new.html.erb within layouts/application (2.7ms)
-Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:08:22 -0300
+Started POST "/segments" for 127.0.0.1 at 2017-08-25 19:19:25 -0300
 Processing by SegmentsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ab6k/2g50L7BHeCPbkkfDUHzCCndZBMNA7rh4dKwkmgIsAJp0vfdZ+zwWwPQSLdMKT2/TnSoYvua3cYJP2fw7g==", "segment"=>{"name"=>"Outro teste"}, "filter-field"=>{"1"=>{"1"=>"age"}}, "filter-filter"=>{"1"=>{"1"=>"Equal"}}, "filter-value"=>{"1"=>{"1"=>"25"}}, "commit"=>"Save Segment"}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jL7VW5Q0M45eb2iaWOQ5jHFSxpXtPQ9X8Vz9RK8lDySFsHPNLvo+V3OC0xbm5ZHNGZxx8kTxfqFoO9qsQvJtog==", "segment"=>{"name"=>"Product"}, "filter-field"=>{"1"=>{"1"=>"occupation"}}, "filter-filter"=>{"1"=>{"1"=>"Contains"}}, "filter-value"=>{"1"=>{"1"=>"Product"}}, "commit"=>"Save Segment"}
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Outro teste"], ["created_at", "2017-08-25 21:08:22.819515"], ["updated_at", "2017-08-25 21:08:22.819515"]]
-  [1m[35m (257.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Product"], ["created_at", "2017-08-25 22:19:25.715308"], ["updated_at", "2017-08-25 22:19:25.715308"]]
+  [1m[35m (220.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("segmentation_id", "group", "field", "operation", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["segmentation_id", 18], ["group", 1], ["field", "age"], ["operation", "Equal"], ["value", "25"], ["created_at", "2017-08-25 21:08:23.091759"], ["updated_at", "2017-08-25 21:08:23.091759"]]
-  [1m[35m (152.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("segmentation_id", "group", "field", "operation", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["segmentation_id", 20], ["group", 1], ["field", "occupation"], ["operation", "Contains"], ["value", "Product"], ["created_at", "2017-08-25 22:19:25.943858"], ["updated_at", "2017-08-25 22:19:25.943858"]]
+  [1m[35m (147.9ms)[0m  [1m[36mcommit transaction[0m
 Redirected to http://0.0.0.0:3000/segments
-Completed 302 Found in 429ms (ActiveRecord: 412.4ms)
+Completed 302 Found in 391ms (ActiveRecord: 370.1ms)
 
 
-Started GET "/segments" for 127.0.0.1 at 2017-08-25 18:08:23 -0300
+Started GET "/segments" for 127.0.0.1 at 2017-08-25 19:19:26 -0300
+Processing by SegmentsController#index as HTML
+  Rendering segments/index.html.erb within layouts/application
+  [1m[36mSegmentation Load (0.4ms)[0m  [1m[34mSELECT "segmentations".* FROM "segmentations"[0m
+  Rendered segments/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 843ms (Views: 841.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts?segmentation_id=20" for 127.0.0.1 at 2017-08-25 19:19:32 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"20"}
+  [1m[36mSegmentationFilter Load (0.3ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '20')[0m
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE ((occupation like "%Product%"))[0m
+  Rendered contacts/index.html.erb (3.6ms)
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 19:19:43 -0300
+Processing by SegmentsController#new as HTML
+  Rendering segments/new.html.erb within layouts/application
+  Rendered segments/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 19:19:51 -0300
+Processing by SegmentsController#new as HTML
+  Rendering segments/new.html.erb within layouts/application
+  Rendered segments/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/segments" for 127.0.0.1 at 2017-08-25 19:20:08 -0300
+Processing by SegmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hF+aPK9FYF8PjlriV/yMtcxm+pdFE1OqSEVMLyeKncaNUTyqFYtthiJj4W7p/ST0pKhN8OzfIlzRImvHyl3/QA==", "segment"=>{"name"=>"Start product"}, "filter-field"=>{"1"=>{"1"=>"occupation"}}, "filter-filter"=>{"1"=>{"1"=>"StartsWith"}}, "filter-value"=>{"1"=>{"1"=>"Product"}}, "commit"=>"Save Segment"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Start product"], ["created_at", "2017-08-25 22:20:08.695793"], ["updated_at", "2017-08-25 22:20:08.695793"]]
+  [1m[35m (254.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("segmentation_id", "group", "field", "operation", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["segmentation_id", 21], ["group", 1], ["field", "occupation"], ["operation", "StartsWith"], ["value", "Product"], ["created_at", "2017-08-25 22:20:08.954802"], ["updated_at", "2017-08-25 22:20:08.954802"]]
+  [1m[35m (162.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/segments
+Completed 302 Found in 427ms (ActiveRecord: 418.8ms)
+
+
+Started GET "/segments" for 127.0.0.1 at 2017-08-25 19:20:09 -0300
 Processing by SegmentsController#index as HTML
   Rendering segments/index.html.erb within layouts/application
   [1m[36mSegmentation Load (0.2ms)[0m  [1m[34mSELECT "segmentations".* FROM "segmentations"[0m
-  Rendered segments/index.html.erb within layouts/application (2.7ms)
-Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+  Rendered segments/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/contacts" for 127.0.0.1 at 2017-08-25 18:08:32 -0300
+Started GET "/contacts?segmentation_id=20" for 127.0.0.1 at 2017-08-25 19:20:14 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"20"}
+  [1m[36mSegmentationFilter Load (0.4ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '20')[0m
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE ((occupation like "%Product%"))[0m
+  Rendered contacts/index.html.erb (2.7ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts?segmentation_id=21" for 127.0.0.1 at 2017-08-25 19:20:38 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"21"}
+  [1m[36mSegmentationFilter Load (0.5ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '21')[0m
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE ((occupation like "Product%"))[0m
+  Rendered contacts/index.html.erb (5.4ms)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/contacts?segmentation_id=20" for 127.0.0.1 at 2017-08-25 19:20:41 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"20"}
+  [1m[36mSegmentationFilter Load (0.2ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '20')[0m
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE ((occupation like "%Product%"))[0m
+  Rendered contacts/index.html.erb (1.5ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts?segmentation_id=21" for 127.0.0.1 at 2017-08-25 19:20:44 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"21"}
+  [1m[36mSegmentationFilter Load (0.5ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '21')[0m
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE ((occupation like "Product%"))[0m
+  Rendered contacts/index.html.erb (2.6ms)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-08-25 19:20:48 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb
+  Rendered contacts/new.html.erb (21.4ms)
+Completed 200 OK in 31ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-08-25 19:21:03 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yScm94y6DbdZppIwJCl/3/Ic5/2O3NjKlsOpn0fGASangEFK/IQlBzkJ5PW6rcOWDhXTGx5/L9DD+3Mo5Iwk/A==", "contact"=>{"name"=>"Shu", "email"=>"shu@shu.com", "age"=>"32", "state"=>"SC", "occupation"=>"Owner Product"}, "commit"=>"Save Contact"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "age", "state", "occupation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shu"], ["email", "shu@shu.com"], ["age", 32], ["state", "SC"], ["occupation", "Owner Product"], ["created_at", "2017-08-25 22:21:03.144873"], ["updated_at", "2017-08-25 22:21:03.144873"]]
+  [1m[35m (258.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/contacts/4
+Completed 302 Found in 265ms (ActiveRecord: 259.6ms)
+
+
+Started GET "/contacts/4" for 127.0.0.1 at 2017-08-25 19:21:03 -0300
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb
+  Rendered contacts/show.html.erb (1.0ms)
+Completed 200 OK in 34ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-08-25 19:21:07 -0300
 Processing by ContactsController#index as HTML
   Rendering contacts/index.html.erb
   [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
-  Rendered contacts/index.html.erb (11.2ms)
-Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 1.0ms)
+  Rendered contacts/index.html.erb (3.6ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/contacts?segmentation_id=1" for 127.0.0.1 at 2017-08-25 18:08:37 -0300
+Started GET "/contacts?segmentation_id=20" for 127.0.0.1 at 2017-08-25 19:21:11 -0300
 Processing by ContactsController#index as HTML
-  Parameters: {"segmentation_id"=>"1"}
+  Parameters: {"segmentation_id"=>"20"}
+  [1m[36mSegmentationFilter Load (0.5ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '20')[0m
   Rendering contacts/index.html.erb
-  Rendered contacts/index.html.erb (0.8ms)
-Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE ((occupation like "%Product%"))[0m
+  Rendered contacts/index.html.erb (1.8ms)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.8ms)
 
 
-Started GET "/contacts?segmentation_id=7" for 127.0.0.1 at 2017-08-25 18:08:44 -0300
+Started GET "/contacts?segmentation_id=21" for 127.0.0.1 at 2017-08-25 19:21:14 -0300
 Processing by ContactsController#index as HTML
-  Parameters: {"segmentation_id"=>"7"}
+  Parameters: {"segmentation_id"=>"21"}
+  [1m[36mSegmentationFilter Load (0.4ms)[0m  [1m[34mSELECT "segmentation_filters".* FROM "segmentation_filters" WHERE (segmentation_id = '21')[0m
   Rendering contacts/index.html.erb
-  Rendered contacts/index.html.erb (0.8ms)
-Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/contacts?segmentation_id=17" for 127.0.0.1 at 2017-08-25 18:08:46 -0300
-Processing by ContactsController#index as HTML
-  Parameters: {"segmentation_id"=>"17"}
-  Rendering contacts/index.html.erb
-  Rendered contacts/index.html.erb (0.6ms)
-Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE ((occupation like "Product%"))[0m
+  Rendered contacts/index.html.erb (4.8ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.6ms)
 
 
