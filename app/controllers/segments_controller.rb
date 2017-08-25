@@ -117,7 +117,6 @@ class SegmentsController < ApplicationController
         @segmentation = Segmentation.new(segment_params)
         @segmentation.save
         @filters = segment_filters_params
-        @f = ''
 
         @filters.each do |filter|
             filter['segmentation'] = @segmentation
@@ -125,7 +124,7 @@ class SegmentsController < ApplicationController
             @segmentation_filter.save
         end
 
-        render plain: [@segmentation.id]
+        redirect_to segments_path
     end
 
     private

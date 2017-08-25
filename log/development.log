@@ -219,3 +219,78 @@ Processing by ContactsController#index as HTML
 Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/segments" for 127.0.0.1 at 2017-08-25 18:08:00 -0300
+Processing by SegmentsController#index as HTML
+  Rendering segments/index.html.erb within layouts/application
+  [1m[36mSegmentation Load (0.2ms)[0m  [1m[34mSELECT "segmentations".* FROM "segmentations"[0m
+  Rendered segments/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:08:04 -0300
+Processing by SegmentsController#new as HTML
+  Rendering segments/new.html.erb within layouts/application
+  Rendered segments/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 36ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/segments/new" for 127.0.0.1 at 2017-08-25 18:08:11 -0300
+Processing by SegmentsController#new as HTML
+  Rendering segments/new.html.erb within layouts/application
+  Rendered segments/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/segments" for 127.0.0.1 at 2017-08-25 18:08:22 -0300
+Processing by SegmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ab6k/2g50L7BHeCPbkkfDUHzCCndZBMNA7rh4dKwkmgIsAJp0vfdZ+zwWwPQSLdMKT2/TnSoYvua3cYJP2fw7g==", "segment"=>{"name"=>"Outro teste"}, "filter-field"=>{"1"=>{"1"=>"age"}}, "filter-filter"=>{"1"=>{"1"=>"Equal"}}, "filter-value"=>{"1"=>{"1"=>"25"}}, "commit"=>"Save Segment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "segmentations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Outro teste"], ["created_at", "2017-08-25 21:08:22.819515"], ["updated_at", "2017-08-25 21:08:22.819515"]]
+  [1m[35m (257.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "segmentation_filters" ("segmentation_id", "group", "field", "operation", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["segmentation_id", 18], ["group", 1], ["field", "age"], ["operation", "Equal"], ["value", "25"], ["created_at", "2017-08-25 21:08:23.091759"], ["updated_at", "2017-08-25 21:08:23.091759"]]
+  [1m[35m (152.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/segments
+Completed 302 Found in 429ms (ActiveRecord: 412.4ms)
+
+
+Started GET "/segments" for 127.0.0.1 at 2017-08-25 18:08:23 -0300
+Processing by SegmentsController#index as HTML
+  Rendering segments/index.html.erb within layouts/application
+  [1m[36mSegmentation Load (0.2ms)[0m  [1m[34mSELECT "segmentations".* FROM "segmentations"[0m
+  Rendered segments/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-08-25 18:08:32 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (11.2ms)
+Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts?segmentation_id=1" for 127.0.0.1 at 2017-08-25 18:08:37 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"1"}
+  Rendering contacts/index.html.erb
+  Rendered contacts/index.html.erb (0.8ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts?segmentation_id=7" for 127.0.0.1 at 2017-08-25 18:08:44 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"7"}
+  Rendering contacts/index.html.erb
+  Rendered contacts/index.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts?segmentation_id=17" for 127.0.0.1 at 2017-08-25 18:08:46 -0300
+Processing by ContactsController#index as HTML
+  Parameters: {"segmentation_id"=>"17"}
+  Rendering contacts/index.html.erb
+  Rendered contacts/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
