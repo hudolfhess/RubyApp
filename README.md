@@ -9,6 +9,7 @@
 
 # What is missing?
 - Final tests
+- Deploy
 - Security improvment (XSS, SQL Injection)
 
 # How to run?

@@ -1,6 +1,9 @@
 <h1>Listing contacts</h1>
  <%= link_to 'New contact', new_contact_path %>
  <%= link_to 'Show segments', segments_path %>
+ <div style="background: #eee; border: 1px solid #333; padding: 10px;">
+  <%= @queryWhere %>
+ </div>
 <table>
   <tr>
     <th>Name</th>
