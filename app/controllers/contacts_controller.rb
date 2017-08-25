@@ -3,6 +3,7 @@ require_relative '../entities/segmentation_filters_entity'
 
 class ContactsController < ApplicationController
     def initialize
+        super
         @contact_gateway = ContactGateway.new
     end
 

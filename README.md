@@ -10,6 +10,7 @@
 # What is missing?
 - Final tests
 - Deploy
+- Some CSS
 - Security improvment (XSS, SQL Injection)
 
 # How to run?
