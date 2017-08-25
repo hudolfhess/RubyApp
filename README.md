@@ -5,9 +5,11 @@
 - [x] Edit contact
 - [X] List segments
 - [X] Add segment
-- [X] Filter contacts by segmentses
+- [X] Filter contacts by segments
 
 # What is missing?
+- Show segmentations in contact list to filter
+- Link do filter by segmentation in sementations list
 - Final tests
 - Deploy
 - Some CSS
