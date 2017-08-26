@@ -8,9 +8,10 @@
 - [X] Filter contacts by segments
 - [X] Show segmentations in contact list to filter
 - [X] Link do filter by segmentation in sementations list
+- [X] Final tests
 
 # What is missing?
-- Final tests
+
 - Deploy
 - Some CSS
 - Security improvement (XSS, SQL Injection)
