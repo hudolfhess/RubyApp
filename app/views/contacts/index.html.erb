@@ -4,6 +4,16 @@
  <div style="background: #eee; border: 1px solid #333; padding: 10px;">
   <%= @queryWhere %>
  </div>
+<form method="get">
+  <strong>Filter contacts by: </strong>
+  <select name="segmentation_id">
+    <option value="">All contacts</option>
+  <% @segments.each do |segment| %>
+    <option value="<%= segment.id %>" <%= segment.id == @segmentation_id.to_i ? 'selected' : '' %>><%= segment.name %></option>
+  <% end %>
+  <input type="submit" value="Filter" />
+  </select>
+</form>
 <table>
   <tr>
     <th>Name</th>

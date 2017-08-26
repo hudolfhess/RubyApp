@@ -8,7 +8,7 @@
     <% @segments.each do |segment| %>
     <tr>
       <td><%= segment.name %></td>
-      <td><%= link_to 'Filter contacts', contacts_path %></td>
+      <td><%= link_to 'Filter contacts', contacts_path(:segmentation_id => segment.id) %></td>
     </tr>
   <% end %>
 </table>

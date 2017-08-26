@@ -9,6 +9,7 @@ class ContactsController < ApplicationController
 
     def index
         @segmentation_id = params[:segmentation_id]
+        @segments = Segmentation.all
 
         if @segmentation_id
             @segmentation_filters = SegmentationFilter.where('segmentation_id = ?', @segmentation_id)
