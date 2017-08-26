@@ -10,25 +10,25 @@ class SegmentationFilterQueryBuilderTests < ActiveSupport::TestCase
     test "When passed filter Equal" do
         filter = get_segmentantion_filter('_field_', EqualFilterEntity.new.get_operator_name, '_value_')
         query_builder = SegmentationFilterQueryBuilder.new([filter])
-        assert_equal '(_field_ = "_value_")', query_builder.get_query
+        assert_equal '(_field_ = \'_value_\')', query_builder.get_query
     end
 
     test "When passed filter Contains" do
         filter = get_segmentantion_filter('_field_', ContainsFilterEntity.new.get_operator_name, '_value_')
         query_builder = SegmentationFilterQueryBuilder.new([filter])
-        assert_equal '(_field_ like "%_value_%")', query_builder.get_query
+        assert_equal '(_field_ like \'%_value_%\')', query_builder.get_query
     end
 
     test "When passed filter StartsWith" do
         filter = get_segmentantion_filter('_field_', StartsWithFilterEntity.new.get_operator_name, '_value_')
         query_builder = SegmentationFilterQueryBuilder.new([filter])
-        assert_equal '(_field_ like "_value_%")', query_builder.get_query
+        assert_equal '(_field_ like \'_value_%\')', query_builder.get_query
     end
 
     test "When passed filter FinishWith" do
         filter = get_segmentantion_filter('_field_', FinishWithFilterEntity.new.get_operator_name, '_value_')
         query_builder = SegmentationFilterQueryBuilder.new([filter])
-        assert_equal '(_field_ like "%_value_")', query_builder.get_query
+        assert_equal '(_field_ like \'%_value_\')', query_builder.get_query
     end
 
     test "When passed filter GreaterThan" do
@@ -59,7 +59,7 @@ class SegmentationFilterQueryBuilderTests < ActiveSupport::TestCase
         filter_1 = get_segmentantion_filter('_field_', LowerOrEqualThanFilterEntity.new.get_operator_name, '_value_', 0)
         filter_2 = get_segmentantion_filter('_field_', EqualFilterEntity.new.get_operator_name, '_value_', 0)
         query_builder = SegmentationFilterQueryBuilder.new([filter_1, filter_2])
-        assert_equal '(_field_ <= _value_ AND _field_ = "_value_")', query_builder.get_query
+        assert_equal '(_field_ <= _value_ AND _field_ = \'_value_\')', query_builder.get_query
     end
 
     test "Should separate different groups with OR operator" do
@@ -68,7 +68,7 @@ class SegmentationFilterQueryBuilderTests < ActiveSupport::TestCase
         filter_3 = get_segmentantion_filter('_field_', EqualFilterEntity.new.get_operator_name, '_value_', 1)
         filter_4 = get_segmentantion_filter('_field_', LowerOrEqualThanFilterEntity.new.get_operator_name, '_value_', 1)
         query_builder = SegmentationFilterQueryBuilder.new([filter_1, filter_2, filter_3, filter_4])
-        assert_equal '(_field_ = "_value_" AND _field_ <= _value_) OR (_field_ = "_value_" AND _field_ <= _value_)', query_builder.get_query
+        assert_equal '(_field_ = \'_value_\' AND _field_ <= _value_) OR (_field_ = \'_value_\' AND _field_ <= _value_)', query_builder.get_query
     end
 
     def get_segmentantion_filter(field, operation, value, group = 0)

@@ -17,28 +17,28 @@ end
 class EqualFilterEntity < SegmentationFilterEntity
     def initialize
         @operator_name = 'Equal'
-        @query_string = '{field} = "{value}"'
+        @query_string = '{field} = \'{value}\''
     end
 end
 
 class ContainsFilterEntity < SegmentationFilterEntity
     def initialize
         @operator_name = 'Contains'
-        @query_string = '{field} like "%{value}%"'
+        @query_string = '{field} like \'%{value}%\''
     end
 end
 
 class StartsWithFilterEntity < SegmentationFilterEntity
     def initialize
         @operator_name = 'StartsWith'
-        @query_string = '{field} like "{value}%"'
+        @query_string = '{field} like \'{value}%\''
     end
 end
 
 class FinishWithFilterEntity < SegmentationFilterEntity
     def initialize
         @operator_name = 'FinishWith'
-        @query_string = '{field} like "%{value}"'
+        @query_string = '{field} like \'%{value}\''
     end
 end
 

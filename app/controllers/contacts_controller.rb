@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
         @segmentation_id = params[:segmentation_id]
         @segments = Segmentation.all
 
-        if @segmentation_id
+        if @segmentation_id.to_i > 0
             @segmentation_filters = SegmentationFilter.where('segmentation_id = ?', @segmentation_id)
             @segmentation_query_builder = SegmentationFilterQueryBuilder.new(@segmentation_filters)
             @queryWhere = @segmentation_query_builder.get_query

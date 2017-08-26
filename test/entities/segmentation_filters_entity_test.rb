@@ -11,7 +11,7 @@ class EqualFilterEntityTests < ActionView::TestCase
         filter = EqualFilterEntity.new
         field = '__field__'
         value = '__value__'
-        assert_equal '__field__ = "__value__"', filter.get_query(field, value)
+        assert_equal '__field__ = \'__value__\'', filter.get_query(field, value)
     end
 end
 
@@ -25,7 +25,7 @@ class ContainsFilterEntityTests < ActionView::TestCase
         filter = ContainsFilterEntity.new
         field = '__field__'
         value = '__value__'
-        assert_equal '__field__ like "%__value__%"', filter.get_query(field, value)
+        assert_equal '__field__ like \'%__value__%\'', filter.get_query(field, value)
     end
 end
 
@@ -39,7 +39,7 @@ class StartsWithFilterEntityTests < ActionView::TestCase
         filter = StartsWithFilterEntity.new
         field = '__field__'
         value = '__value__'
-        assert_equal '__field__ like "__value__%"', filter.get_query(field, value)
+        assert_equal '__field__ like \'__value__%\'', filter.get_query(field, value)
     end
 end
 
@@ -53,7 +53,7 @@ class FinishWithFilterEntityTests < ActionView::TestCase
         filter = FinishWithFilterEntity.new
         field = '__field__'
         value = '__value__'
-        assert_equal '__field__ like "%__value__"', filter.get_query(field, value)
+        assert_equal '__field__ like \'%__value__\'', filter.get_query(field, value)
     end
 end
 
