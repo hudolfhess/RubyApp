@@ -28,3 +28,17 @@ class ContainsFilterEntityTests < ActionView::TestCase
         assert_equal '__field__ like "%__value__%"', filter.get_query(field, value)
     end
 end
+
+class StartsWithFilterEntityTests < ActionView::TestCase
+    test "Operator name should be StartsWith" do
+        filter = StartsWithFilterEntity.new
+        assert_equal 'StartsWith', filter.get_operator_name
+    end
+
+    test "Get subquery value" do
+        filter = StartsWithFilterEntity.new
+        field = '__field__'
+        value = '__value__'
+        assert_equal '__field__ like "__value__%"', filter.get_query(field, value)
+    end
+end
