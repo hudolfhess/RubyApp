@@ -6,10 +6,10 @@
 - [X] List segments
 - [X] Add segment
 - [X] Filter contacts by segments
+- [X] Show segmentations in contact list to filter
+- [X] Link do filter by segmentation in sementations list
 
 # What is missing?
-- Show segmentations in contact list to filter
-- Link do filter by segmentation in sementations list
 - Final tests
 - Deploy
 - Some CSS
