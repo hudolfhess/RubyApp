@@ -98,3 +98,17 @@ class GreaterThanFilterEntityTests < ActionView::TestCase
         assert_equal '__field__ > __value__', filter.get_query(field, value)
     end
 end
+
+class GreaterOrEqualThanFilterEntityTests < ActionView::TestCase
+    test "Operator name should be GreaterThan" do
+        filter = GreaterOrEqualThanFilterEntity.new
+        assert_equal 'GreaterOrEqualThan', filter.get_operator_name
+    end
+
+    test "Get subquery value" do
+        filter = GreaterOrEqualThanFilterEntity.new
+        field = '__field__'
+        value = '__value__'
+        assert_equal '__field__ >= __value__', filter.get_query(field, value)
+    end
+end
