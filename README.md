@@ -9,10 +9,9 @@
 - [X] Show segmentations in contact list to filter
 - [X] Link do filter by segmentation in sementations list
 - [X] Final tests
+- [X] Deploy
 
 # What is missing?
-
-- Deploy
 - Some CSS
 - Security improvement (XSS, SQL Injection)
 
