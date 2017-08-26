@@ -71,7 +71,6 @@ class LowerThanFilterEntityTests < ActionView::TestCase
     end
 end
 
-
 class LowerOrEqualThanFilterEntityTests < ActionView::TestCase
     test "Operator name should be LowerOrEqualThan" do
         filter = LowerOrEqualThanFilterEntity.new
@@ -83,5 +82,19 @@ class LowerOrEqualThanFilterEntityTests < ActionView::TestCase
         field = '__field__'
         value = '__value__'
         assert_equal '__field__ <= __value__', filter.get_query(field, value)
+    end
+end
+
+class GreaterThanFilterEntityTests < ActionView::TestCase
+    test "Operator name should be GreaterThan" do
+        filter = GreaterThanFilterEntity.new
+        assert_equal 'GreaterThan', filter.get_operator_name
+    end
+
+    test "Get subquery value" do
+        filter = GreaterThanFilterEntity.new
+        field = '__field__'
+        value = '__value__'
+        assert_equal '__field__ > __value__', filter.get_query(field, value)
     end
 end
