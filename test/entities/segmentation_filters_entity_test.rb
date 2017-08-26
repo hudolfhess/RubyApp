@@ -56,3 +56,17 @@ class FinishWithFilterEntityTests < ActionView::TestCase
         assert_equal '__field__ like "%__value__"', filter.get_query(field, value)
     end
 end
+
+class LowerThanFilterEntityTests < ActionView::TestCase
+    test "Operator name should be LowerThan" do
+        filter = LowerThanFilterEntity.new
+        assert_equal 'LowerThan', filter.get_operator_name
+    end
+
+    test "Get subquery value" do
+        filter = LowerThanFilterEntity.new
+        field = '__field__'
+        value = '__value__'
+        assert_equal '__field__ < __value__', filter.get_query(field, value)
+    end
+end
