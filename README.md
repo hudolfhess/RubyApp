@@ -23,6 +23,7 @@
 
 ## Runningp project
 ```sh
+gem install bundler
 git clone https://github.com/hudolfhess/RubyApp
 cd RubyApp
 bundle install # fist time only
